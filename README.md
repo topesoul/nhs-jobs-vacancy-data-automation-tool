@@ -2,7 +2,7 @@
 
 This repository provides a Python-based automation tool developed to streamline the collection of vacancy data from NHS Jobs and other public data sources, all via the NHS Jobs API. It was designed for Integrated Care Systems (ICS) and Trusts to reduce the time spent on manual gathering of job vacancy posts data from multiple websites, improve data consistency, and support workforce planning analysis. 
 
-This is especially helpful given that, at any point in time, there could be over 2,000 jobs posted on the NHS Jobs site. The script offers a reliable and repeatable way to extract and standardise relevant vacancy data across a defined list of NHS organisations, including providers that do not publish vacancies via Trac.
+This is especially helpful given that, at any point in time, there could be over 2,000 jobs posted on the NHS Jobs site. The script offers a reliable and repeatable way to extract and standardise relevant vacancy data across a defined list of NHS organisations, including providers that do not publish vacancies on the same job boards e.g., via Trac.
 
 ---
 
