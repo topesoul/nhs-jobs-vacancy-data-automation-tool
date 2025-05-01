@@ -1,4 +1,4 @@
-# NHS Vacancy Data Automation
+# NHS Jobs Vacancy Data Automation
 
 This repository provides a Python-based automation tool developed to streamline the collection of vacancy data from NHS Jobs and other public data sources, all via the NHS Jobs API. It was designed for Integrated Care Systems (ICS) and Trusts to reduce the time spent on manual gathering of job vacancy posts data from multiple websites, improve data consistency, and support workforce planning analysis. 
 
