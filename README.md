@@ -27,10 +27,29 @@ This is especially helpful given that, at any point in time, there could be over
 pip install -r requirements.txt
 ```
 
-4. In `main.py`, review the `TARGET_EMPLOYERS` list to reflect your ICS or provider geography
-5. Update the `output_dir` path to match your system (e.g., a OneDrive-synced SharePoint folder)
-6. Run the script manually or set up automation (see below)
+4. Set up environment variables (see below for details)
+5. In `main.py`, review the `TARGET_EMPLOYERS` list to reflect your ICS or provider geography
+6. Update the `output_dir` path to match your system (e.g., a OneDrive-synced SharePoint folder)
+7. Run the script manually or set up automation (see below)
 
+---
+
+## 🌐 Environment Variables
+
+This project uses environment variables to manage configuration such as the API base URL. Create a `.env` file in the root directory of the project and add the following variables:
+**Required Variables:**
+  - `BASE_URL`: The base URL of the NHS jobs API (default: `https://www.jobs.nhs.uk/api/v1/search_xml`).
+  - `API_KEY`: (Optional) If the API requires an authentication key in the future, add it here.
+
+**Example `.env` File:**
+```
+BASE_URL=https://www.jobs.nhs.uk/api/v1/search_xml
+API_KEY=your_api_key_here
+```
+**Instructions:**
+1. Create a .env file in the root directory of the project (same folder as main.py).
+2. Add the variables as shown above.
+3. If no `API_KEY` is required, leave it blank. The script will still work with the default `BASE_URL`.
 ---
 
 ## 🔁 How Output Delivery Works
