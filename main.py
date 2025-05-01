@@ -2,23 +2,33 @@ import requests
 import xml.etree.ElementTree as ET
 import pandas as pd
 import os
-from dotenv import load_dotenv  # Import dotenv to load environment variables
+from dotenv import load_dotenv  # Import dotenv to handle environment variables
 from datetime import datetime
 import time
+import sys
 
-# Load environment variables from .env file
+# Load environment variables from a .env file
 load_dotenv()
 
-# Configurations (make sure you set the exact Employer names on NHS Jobs site)
-BASE_URL = os.getenv("BASE_URL", "https://www.jobs.nhs.uk/api/v1/search_xml")
-API_KEY = os.getenv("API_KEY")  # Load API key (if needed)
+# Configurations (Environment Variables)
+BASE_URL = os.getenv("BASE_URL", "https://www.jobs.nhs.uk/api/v1/search_xml")  # Default value for BASE_URL
+API_KEY = os.getenv("API_KEY")  # Optional, in case the API requires a key in the future
+
+# Check if required environment variables are set
+if not BASE_URL:
+    print("Error: The BASE_URL environment variable is not set.")
+    sys.exit(1)
+
+# Employer names for Nottingham region
 TARGET_EMPLOYERS = [
     "Nottingham University Hospitals NHS Trust",
     "Nottinghamshire Healthcare NHS Foundation Trust",
     "Sherwood Forest Hospitals NHS Foundation Trust",
     "Nottingham CityCare Partnership CIC",
     "NHS Nottingham and Nottinghamshire Integrated Care Board"
-]  # Employer names for Nottingham region
+]
+
+# Other configurations
 MAX_PAGES = 2000  # Increased maximum page limit to ensure all pages are fetched
 VERBOSE = True  # Verbosity flag to control debug output
 MAX_RETRIES = 3  # Maximum number of retries for failed requests
