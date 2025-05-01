@@ -11,9 +11,9 @@ This is especially helpful given that, at any point in time, there could be over
 - Connects to the **NHS Jobs API** to retrieve XML-based job postings
 - Automatically filters vacancy data based on a list of named NHS organisations
 - Removes duplicate entries using a combination of job reference and vacancy ID
-- Saves the extracted data as a structured CSV file to a local directory or a OneDrive/SharePoint synced folder
+- Saves the extracted data as a structured CSV file to a local directory or a OneDrive/SharePoint synced folder (needs sepearate modification)
 - Can be scheduled via **Windows Task Scheduler** or hosted on a **remote Windows server**
-- (Optional) Integrates with SharePoint alerting or Power Automate flows for automatic notifications
+- (Optional) Integrates with SharePoint alerting or Power Automate flows for automatic notifications (needs sepearate modification)
 
 ---
 
