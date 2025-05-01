@@ -86,5 +86,5 @@ This project is released under the MIT License – you are free to reuse, modify
 ## 🙋🏽‍♂️ Author
 
 **Temitope Akingbala**  
-Feel free to contact me for collaboration or adaptation within your ICS.
+Feel free to contact me for collaboration or adaptation discussions
 
