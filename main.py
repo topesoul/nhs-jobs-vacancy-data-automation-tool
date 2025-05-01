@@ -2,11 +2,16 @@ import requests
 import xml.etree.ElementTree as ET
 import pandas as pd
 import os
+from dotenv import load_dotenv  # Import dotenv to load environment variables
 from datetime import datetime
 import time
 
+# Load environment variables from .env file
+load_dotenv()
+
 # Configurations (make sure you set the exact Employer names on NHS Jobs site)
-BASE_URL = "https://www.jobs.nhs.uk/api/v1/search_xml"
+BASE_URL = os.getenv("BASE_URL", "https://www.jobs.nhs.uk/api/v1/search_xml")
+API_KEY = os.getenv("API_KEY")  # Load API key (if needed)
 TARGET_EMPLOYERS = [
     "Nottingham University Hospitals NHS Trust",
     "Nottinghamshire Healthcare NHS Foundation Trust",
@@ -39,7 +44,12 @@ def fetch_job_data():
         retries = 0
         while retries < MAX_RETRIES:
             try:
-                response = requests.get(BASE_URL, params=params, timeout=10)  # Adding a timeout to prevent hanging requests
+                # Add API Key to the request headers (if required by the API)
+                headers = {}
+                if API_KEY:
+                    headers["Authorization"] = f"Bearer {API_KEY}"
+
+                response = requests.get(BASE_URL, params=params, headers=headers, timeout=10)  # Adding a timeout to prevent hanging requests
                 if response.status_code == 200:
                     break
                 else:
