@@ -86,7 +86,5 @@ This project is released under the MIT License – you are free to reuse, modify
 ## 🙋🏽‍♂️ Author
 
 **Temitope Akingbala**  
-Principal Data Analyst – Strategic Workforce  
-Nottingham & Nottinghamshire Integrated Care System  
 Feel free to contact me for collaboration or adaptation within your ICS.
 
