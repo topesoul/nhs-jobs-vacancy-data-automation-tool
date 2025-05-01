@@ -5,7 +5,7 @@ import os
 from datetime import datetime
 import time
 
-# Configurations
+# Configurations (make sure you set the exact Employer names on NHS Jobs site)
 BASE_URL = "https://www.jobs.nhs.uk/api/v1/search_xml"
 TARGET_EMPLOYERS = [
     "Nottingham University Hospitals NHS Trust",
@@ -155,7 +155,7 @@ def fetch_job_data():
 # Function to generate CSV report and save to specified output path
 def generate_csv(job_data):
     # Specify the output directory for the local drive
-    output_dir = r"C:\Users\AkinTem\nottscollab\Workforce [SID14] - Documents\ICS Live Vacancy Data"
+    output_dir = ""
     os.makedirs(output_dir, exist_ok=True)
    
     # Create the full file path
