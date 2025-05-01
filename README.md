@@ -71,7 +71,7 @@ nhs-vacancy-data-automation/
 
 - Reduces the burden of manual vacancy tracking
 - Gives consistent, comparable job data across providers
-- Flexible for ICS-wide use, including providers that don’t use Trac
+- Flexible for ICS-wide use, including providers that don’t use the same job boards as long as the data is captured on NHS jobs site
 - Easily replicable by colleagues with minimal Python knowledge
 - Offers a reliable alternative to RPA by using script-based automation
 
