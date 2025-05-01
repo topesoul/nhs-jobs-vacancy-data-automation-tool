@@ -1,15 +1,19 @@
 # NHS Vacancy Data Automation
 
-This repository provides a Python-based automation tool developed to streamline the collection of vacancy data from NHS Jobs and other public data sources, all via the NHS Jobs API. It was designed for Integrated Care Systems (ICS) and Trusts to reduce the time spent on manual gathering of job vacancy posts data from multiple websites, improve data consistency, and support workforce planning analysis. This is sometimes helpful as at any point in time there could be over 2000 jobs posted on the NHS Jobs site to scan through.
+This repository provides a Python-based automation tool developed to streamline the collection of vacancy data from NHS Jobs and other public data sources, all via the NHS Jobs API. It was designed for Integrated Care Systems (ICS) and Trusts to reduce the time spent on manual gathering of job vacancy posts data from multiple websites, improve data consistency, and support workforce planning analysis. 
+
+This is especially helpful given that, at any point in time, there could be over 2,000 jobs posted on the NHS Jobs site. The script offers a reliable and repeatable way to extract and standardise relevant vacancy data across a defined list of NHS organisations, including providers that do not publish vacancies via Trac.
 
 ---
 
 ## 🔍 What It Does
 
-- Automatically extracts vacancy data across selected NHS organisations
-- Consolidates the data into a single structured CSV file
-- (Optional) Sends the output via email to configured recipients
-- Can be scheduled to run automatically via Task Scheduler or a Remote Server
+- Connects to the **NHS Jobs API** to retrieve XML-based job postings
+- Automatically filters vacancy data based on a list of named NHS organisations
+- Removes duplicate entries using a combination of job reference and vacancy ID
+- Saves the extracted data as a structured CSV file to a local directory or a OneDrive/SharePoint synced folder
+- Can be scheduled via **Windows Task Scheduler** or hosted on a **remote Windows server**
+- (Optional) Integrates with SharePoint alerting or Power Automate flows for automatic notifications
 
 ---
 
@@ -17,14 +21,34 @@ This repository provides a Python-based automation tool developed to streamline 
 
 1. **Clone or download the repository**
 2. Ensure Python 3.9+ is installed
-3. Install the dependencies using:
+3. Install the required Python libraries:
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
-4. Configure your parameters in `main.py` (such as the list of employer names and output directory)
-5. Run `main.py` manually or schedule via Windows Task Scheduler
+4. In `main.py`, review the `TARGET_EMPLOYERS` list to reflect your ICS or provider geography
+5. Update the `output_dir` path to match your system (e.g., a OneDrive-synced SharePoint folder)
+6. Run the script manually or set up automation (see below)
+
+---
+
+## 🔁 How Output Delivery Works
+
+- The script generates a `.csv` file with all filtered job listings
+- The output file is written to a local directory which is **synced to SharePoint via OneDrive**
+- Once the file syncs to SharePoint, you can:
+  - Use a **SharePoint alert** to notify users
+  - Or trigger a **Power Automate (Flow)** to email stakeholders the report automatically
+
+This removes the need for manual distribution or uploads.
+
+---
+
+## ⏱ Automation Options
+
+- **Windows Task Scheduler**: Run the script automatically on a set schedule (e.g., weekly)
+- **Remote Server**: The script can also be hosted on a Windows server with scheduled execution (no user login required)
 
 ---
 
@@ -33,36 +57,29 @@ pip install -r requirements.txt
 ```
 nhs-vacancy-data-automation/
 │
-├── scripts/
-│   ├── main.py
-│   └── email_report.py  # Optional
-│
-├── outputs/
-│   └── sample_output.csv
-│
-├── docs/
-│   └── user_guide.md
-│
-├── .gitignore
-├── LICENSE
-├── README.md
-└── requirements.txt
+├── main.py                   # Core script that fetches and saves vacancy data
+├── user_guide.md             # End-user documentation for replication
+├── sample_output.csv         # Sample CSV for reference
+├── requirements.txt          # Python dependencies
+├── README.md                 # Overview and setup guide
+├── LICENSE                   # MIT License (free to adapt and reuse)
 ```
 
 ---
 
 ## ✅ Benefits for NHS Teams
 
-- Reduces repetitive admin work
-- Standardises vacancy reporting across organisations
-- Adaptable for wider ICS or regional use
-- Demonstrates an alternative approach to RPA by using scripted process automation
+- Reduces the burden of manual vacancy tracking
+- Gives consistent, comparable job data across providers
+- Flexible for ICS-wide use, including providers that don’t use Trac
+- Easily replicable by colleagues with minimal Python knowledge
+- Offers a reliable alternative to RPA by using script-based automation
 
 ---
 
 ## 🧾 Licensing
 
-This project is released under the MIT License – you are free to reuse, modify and distribute with appropriate credit.
+This project is released under the MIT License – you are free to reuse, modify and distribute it with appropriate credit.
 
 ---
 
@@ -72,3 +89,4 @@ This project is released under the MIT License – you are free to reuse, modify
 Principal Data Analyst – Strategic Workforce  
 Nottingham & Nottinghamshire Integrated Care System  
 Feel free to contact me for collaboration or adaptation within your ICS.
+

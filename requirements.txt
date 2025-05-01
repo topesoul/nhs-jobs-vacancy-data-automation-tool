@@ -1,5 +1,2 @@
-pandas
 requests
-beautifulsoup4
-lxml
-openpyxl
+pandas
