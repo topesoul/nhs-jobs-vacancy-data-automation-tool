@@ -1,6 +1,6 @@
 # NHS Vacancy Data Automation
 
-This repository provides a Python-based automation tool developed to streamline the collection of vacancy data from NHS Jobs and other public data sources, all via the NHS jobs API. It was designed for Integrated Care Systems (ICS) and Trusts to reduce the time spent on manual gathering of job vacancy posts data from multiple websites, improve data consistency, and support workforce planning analysis. This is sometimes helpful as at any point in time there could be over 2000 jobs posted on the NHS jobs site to scan through.
+This repository provides a Python-based automation tool developed to streamline the collection of vacancy data from NHS Jobs and other public data sources, all via the NHS Jobs API. It was designed for Integrated Care Systems (ICS) and Trusts to reduce the time spent on manual gathering of job vacancy posts data from multiple websites, improve data consistency, and support workforce planning analysis. This is sometimes helpful as at any point in time there could be over 2000 jobs posted on the NHS Jobs site to scan through.
 
 ---
 
@@ -23,7 +23,7 @@ This repository provides a Python-based automation tool developed to streamline 
 pip install -r requirements.txt
 ```
 
-4. Configure your parameters in `config.py` (folder paths, filters, email settings)
+4. Configure your parameters in `main.py` (such as the list of employer names and output directory)
 5. Run `main.py` manually or schedule via Windows Task Scheduler
 
 ---
@@ -35,8 +35,7 @@ nhs-vacancy-data-automation/
 │
 ├── scripts/
 │   ├── main.py
-│   ├── config.py
-│   └── email_report.py
+│   └── email_report.py  # Optional
 │
 ├── outputs/
 │   └── sample_output.csv
@@ -73,4 +72,3 @@ This project is released under the MIT License – you are free to reuse, modify
 Principal Data Analyst – Strategic Workforce  
 Nottingham & Nottinghamshire Integrated Care System  
 Feel free to contact me for collaboration or adaptation within your ICS.
-
