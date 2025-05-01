@@ -1,6 +1,6 @@
 # NHS Vacancy Data Automation
 
-This repository provides a Python-based automation tool developed to streamline the collection of vacancy data from NHS Jobs and other public data sources. It was designed for Integrated Care Systems (ICS) and Trusts to reduce the time spent on manual downloads, improve data consistency, and support workforce planning analysis.
+This repository provides a Python-based automation tool developed to streamline the collection of vacancy data from NHS Jobs and other public data sources, all via the NHS jobs API. It was designed for Integrated Care Systems (ICS) and Trusts to reduce the time spent on manual gathering of job vacancy posts data from multiple websites, improve data consistency, and support workforce planning analysis. This is sometimes helpful as at any point in time there could be over 2000 jobs posted on the NHS jobs site to scan through.
 
 ---
 
@@ -9,7 +9,7 @@ This repository provides a Python-based automation tool developed to streamline 
 - Automatically extracts vacancy data across selected NHS organisations
 - Consolidates the data into a single structured CSV file
 - (Optional) Sends the output via email to configured recipients
-- Can be scheduled to run automatically via Task Scheduler
+- Can be scheduled to run automatically via Task Scheduler or a Remote Server
 
 ---
 
@@ -57,7 +57,7 @@ nhs-vacancy-data-automation/
 - Reduces repetitive admin work
 - Standardises vacancy reporting across organisations
 - Adaptable for wider ICS or regional use
-- Demonstrates innovation in workforce analytics
+- Demonstrates an alternative approach to RPA by using scripted process automation
 
 ---
 
@@ -69,8 +69,8 @@ This project is released under the MIT License – you are free to reuse, modify
 
 ## 🙋🏽‍♂️ Author
 
-**Temi**  
-Principal Analyst – Strategic Workforce  
+**Temitope Akingbala**  
+Principal Data Analyst – Strategic Workforce  
 Nottingham & Nottinghamshire Integrated Care System  
 Feel free to contact me for collaboration or adaptation within your ICS.
 
