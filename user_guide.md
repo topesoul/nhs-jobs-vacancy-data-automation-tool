@@ -78,7 +78,7 @@ As the NHS Jobs API may evolve, it's good practice to:
 
 ## 📞 Support
 
-If you need help adapting this for your ICB or provider geography, or would like a walkthrough, contact:
+If you need any clarification adapting this for your ICB or provider geography, or would like a walkthrough, contact:
 
 **Temitope Akingbala**  
 Principal Data Analyst – Strategic Workforce  
