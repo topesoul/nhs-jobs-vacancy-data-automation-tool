@@ -17,21 +17,35 @@ This script is used weekly to automatically extract vacancy listings from NHS Jo
 ## 🧰 Setup Requirements
 
 - Python 3.9+
-- Libraries: `requests`, `pandas`
+- Libraries: `requests`, `pandas`, `python-dotenv`
 - Internet access to reach the NHS Jobs API
 
 Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
+---
+
+## Environment Variables
+
+The script uses environment variables to manage configurations like the API base URL. Create a `.env` file in the root directory of the project and define the following:
+```
+   BASE_URL=https://www.jobs.nhs.uk/api/v1/search_xml
+   API_KEY=your_api_key_here
+```
+  - `BASE_URL`: The base URL of the NHS jobs API (default: `https://www.jobs.nhs.uk/api/v1/search_xml`).
+  - `API_KEY`: (Optional) If the API requires an authentication key in the future, add it here.
+
+Make sure the `.env` file is not committed to version control by adding it to `.gitignore`.
 
 ---
 
 ## ⚙️ Configuration
 
-1. In `main.py`, check the `TARGET_EMPLOYERS` list and update it if needed.
-2. Update the output directory path to match your machine or mapped network location (e.g., SharePoint sync path).
-3. Optional: if you want to email the file after it's saved, use the `email_report.py` script.
+1. Create a `.env` file in the root folder of the project.
+2. Update the `TARGET_EMPLOYERS` list in `main.py` to reflect your ICS or provider geography.
+3. The script will use the `BASE_URL` and `API_KEY` from the `.env` file.
+4. Update the output directory path (`output_dir`) in `main.py` to match your machine or mapped network location (e.g., SharePoint sync path).
 
 ---
 
