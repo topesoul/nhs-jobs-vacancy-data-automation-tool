@@ -14,10 +14,9 @@ load_dotenv()
 BASE_URL = os.getenv("BASE_URL", "https://www.jobs.nhs.uk/api/v1/search_xml")  # Default value for BASE_URL
 API_KEY = os.getenv("API_KEY")  # Optional, in case the API requires a key in the future
 
-# Check if required environment variables are set
-if not BASE_URL:
-    print("Error: The BASE_URL environment variable is not set.")
-    sys.exit(1)
+# Log the BASE_URL being used
+if BASE_URL == "https://www.jobs.nhs.uk/api/v1/search_xml":
+    print("Warning: Using the default BASE_URL as the environment variable is not set.")
 
 # Employer names for Nottingham region
 TARGET_EMPLOYERS = [
@@ -175,7 +174,7 @@ def fetch_job_data():
 # Function to generate CSV report and save to specified output path
 def generate_csv(job_data):
     # Specify the output directory for the local drive
-    output_dir = ""
+    output_dir = os.getenv("OUTPUT_DIR", os.path.expanduser("~/nhs_jobs_reports"))  # Default to a folder in the user's home directory
     os.makedirs(output_dir, exist_ok=True)
    
     # Create the full file path
